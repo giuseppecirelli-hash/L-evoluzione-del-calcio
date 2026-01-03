@@ -1,0 +1,60 @@
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Il Calcio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>L'evoluzione del calcio</h1>
+    <p>Scopri la storia e i campionati più famosi</p>
+</header>
+
+<section>
+    <h2>📜 Storia del calcio</h2>
+    <p>
+        Il calcio nasce nel XIX secolo in Inghilterra. Con il tempo si è evoluto
+        grazie a nuove regole, tattiche moderne e tecnologie come il VAR.
+        Oggi è lo sport più seguito al mondo.
+    </p>
+</section>
+
+<section>
+    <h2>🌍 Scegli un campionato</h2>
+    <select id="campionato" onchange="mostraCampionato()">
+        <option value="">-- Seleziona --</option>
+        <option value="seriea">Serie A</option>
+        <option value="premier">Premier League</option>
+        <option value="liga">Liga</option>
+    </select>
+
+    <div id="risultato"></div>
+</section>
+
+<footer>
+    <p>Sito creato da uno studente | Calcio ©</p>
+</footer>
+
+<script>
+function mostraCampionato() {
+    var scelta = document.getElementById("campionato").value;
+    var risultato = document.getElementById("risultato");
+
+    if (scelta === "seriea") {
+        risultato.innerHTML =
+            "<h3>Serie A</h3><p>Il campionato italiano nasce nel 1898. È famoso per la tattica, la difesa e squadre storiche come Juventus, Milan e Inter.</p>";
+    } else if (scelta === "premier") {
+        risultato.innerHTML =
+            "<h3>Premier League</h3><p>La Premier League è il campionato inglese. È noto per l’intensità, la velocità di gioco e il grande seguito internazionale.</p>";
+    } else if (scelta === "liga") {
+        risultato.innerHTML =
+            "<h3>Liga</h3><p>La Liga è il campionato spagnolo. È famosa per il gioco tecnico e squadre come Barcellona e Real Madrid.</p>";
+    } else {
+        risultato.innerHTML = "";
+    }
+}
+</script>
+
+</body>
+</html>
